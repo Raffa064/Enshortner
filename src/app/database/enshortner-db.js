@@ -11,9 +11,28 @@ function EnshortnerDatabase() {
     database: process.env.ENSHORTNER_DATABASE_NAME,
  });
 
-  return {
-    connect: db.connect
+  async function addURLShortner(url, hash) {
+    const insert_sql = "INSERT INTO links (hash, url) VALUES (?, ?);";
+    return db.query(insert_sql, url, hash);
   }
+
+  function getURLByHash(hash) {
+    const select_sql = "SELECT (url) from links WHERE ?";
+    return db.query(select_sql, { hash });
+  }
+
+  function getHashByURL(url) {
+    const select_sql = "SELECT (hash) frrom links WHERE ?";
+    return db.query(select_sql, { url });
+  }
+
+  Object.assign(db, {
+    addURLShortner,
+    getURLByHash,
+    getHashByURL
+  })
+
+  return db;
 }
 
 module.exports = EnshortnerDatabase;

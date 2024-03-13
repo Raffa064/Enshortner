@@ -1,3 +1,7 @@
+require("dotenv").config("../");
+
+console.log("db: "+process.env.ENSHORTNER_DATABASE_NAME);
+
 const EnshortnerDatabase = require("./app/database/enshortner-db");
 const Server = require("./app/server");
 const Router = require("./app/routes/router");

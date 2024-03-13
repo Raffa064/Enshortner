@@ -10,6 +10,17 @@ function randomHash(size, base=16) {
   return hash;
 }
 
+function format_YYYYMMDD_HHMMSS(time) {
+  const formattedTimestamp = `${time.getFullYear()}-${padZero(time.getMonth() + 1)}-${padZero(time.getDate())} ${padZero(time.getHours())}:${padZero(time.getMinutes())}:${padZero(time.getSeconds())}`;
+
+  function padZero(num) {
+    return (num < 10 ? '0' : '') + num;
+  }
+
+  return formattedTimestamp;
+}
+
 module.exports = {
-  randomHash
+  randomHash,
+  format_YYYYMMDD_HHMMSS
 }

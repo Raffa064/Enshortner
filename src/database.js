@@ -20,7 +20,7 @@ function Database(databaseConfig) {
 
   async function query(sql, ...params) {
     return new Promise((resolve, reject) => {
-      connection.query(sql, ...params, (err, result) => {
+      connection.query(sql, params, (err, result) => {
         if (err) {
           reject(err);
           return;
