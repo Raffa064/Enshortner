@@ -8,7 +8,7 @@
 {
     "errCode": 404,
     "errMessage": "Hash not found",
-    "data": "&lt;Queried hash&gt;"
+    "data": "<Queried hash>"
 }
 ```
 
@@ -16,7 +16,7 @@
 - **200** Returns a json content with redirect url as a field 
 ```json
 {
-    "redirectURL": "&lt;Shortened url&gt;"
+    "redirectURL": "<Shortened url>"
 }
 ```
 - **404** Error response json (Not found in database)
@@ -24,7 +24,7 @@
 {
     "errCode": 404,
     "errMessage": "Hash not found",
-    "data": "&lt;Shortened url&gt;"
+    "data": "<Shortened url>"
 }
 ```
 
@@ -32,8 +32,8 @@
 - **200** Returns url hash and it's shortened url (It will add url to databse if necessary)
 ```json
 {
-    "hash": "&lt;URL hash&gt;",
-    "hashURL": "http://localhost:PORT:/hash/&lt;Hash&gt;"
+    "hash": "<URL hash>",
+    "hashURL": "http://localhost:PORT:/hash/<Hash>"
 }
 ```
 - **404** Returns a error response json (Invalid url format)
@@ -41,7 +41,7 @@
 {
     "errCode": "400",
     "errMessage": "Invalid url format",
-    "data": "&lt;Given url&gt;"
+    "data": "<Given url>"
 }
 ```
 - **500** Internal problem while creating a new url register (probably a hash collision)
@@ -49,6 +49,6 @@
 {
     "errCode": 500,
     "errMessage": "Internal server error: can't create url shortener",
-    "data": "&lt;Given url&gt;"
+    "data": "<Given url>"
 }
 ```
