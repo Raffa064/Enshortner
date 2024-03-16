@@ -16,14 +16,18 @@ function EnshortnerDatabase() {
     return db.query(insert_sql, url, hash);
   }
 
+  function returnFirstRow(rows) {
+    return rows[0];
+  }
+
   function getURLByHash(hash) {
     const select_sql = "SELECT (url) from links WHERE ?";
-    return db.query(select_sql, { hash });
+    return db.query(select_sql, { hash }).then(returnFirstRow);
   }
 
   function getHashByURL(url) {
     const select_sql = "SELECT (hash) frrom links WHERE ?";
-    return db.query(select_sql, { url });
+    return db.query(select_sql, { url }).then(returnFirstRow);
   }
 
   Object.assign(db, {

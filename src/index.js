@@ -33,7 +33,7 @@ function startServer() {
   const PORT = process.env.PORT || 8081;
   const server = Server(PORT);
 
-  const router = Router();
+  const router = Router(db);
   server.use(router);
 
   server.start();
