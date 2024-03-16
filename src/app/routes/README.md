@@ -29,18 +29,26 @@
 ```
 
 *GET /url?u=&lt;URL&gt;*
-- **200** Returns url hash and it's shortened url (It will add url to databse if necessary).
+- **200** Returns url hash and it's shortened url (It will add url to databse if necessary)
 ```json
 {
     "hash": "&lt;URL hash&gt;",
     "hashURL": "http://localhost:PORT:/hash/&lt;Hash&gt;"
 }
 ```
-- **404** Returns a error response json (Invalid url format).
+- **404** Returns a error response json (Invalid url format)
 ```json
 {
     "errCode": "400",
     "errMessage": "Invalid url format",
+    "data": "&lt;Given url&gt;"
+}
+```
+- **500** Internal problem while creating a new url register (probably a hash collision)
+```json
+{
+    "errCode": 500,
+    "errMessage": "Internal server error: can't create url shortener",
     "data": "&lt;Given url&gt;"
 }
 ```
