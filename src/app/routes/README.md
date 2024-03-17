@@ -36,7 +36,7 @@
     "hashURL": "http://localhost:PORT:/hash/<Hash>"
 }
 ```
-- **404** Returns a error response json (Invalid url format)
+- **400** Returns a error response json (Invalid url format)
 ```json
 {
     "errCode": "400",

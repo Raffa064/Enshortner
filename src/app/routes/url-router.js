@@ -74,15 +74,14 @@ function URLRouter(db) {
         const hashResponse = HashResponse(hash, getHashURL(req, hash));
         res.status(200).send(hashResponse);
       })
-      .catch((err) => {
-        console.log("ERR: ", err)
+      .catch((_) => {
         // When url doesn't exists in database
         const hash = randomHash(32);
 
         db.addURLShortener(url, hash)
           .then((_) => {
             const hashResponse = HashResponse(hash, getHashURL(req, hash));
-            response.send(200).send(hashResponse);
+            res.send(200).send(hashResponse);
           })
           .catch((err) => {
             // Probably hash collision
