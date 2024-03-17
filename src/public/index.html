@@ -7,7 +7,16 @@
     <link href="css/index.css" rel="stylesheet">
   </head>
   <body>
-    <h1>Hello world</h1>
+    <input id="input-value"/>
+    <select id="mode-selector">
+      <option value="mode-hash-from-url">Hash from url</option>
+      <option value="mode-url-from-hash">Url from hash</option>
+    </select>
+    <button id="action-button">Action</button>
+    <div id="output-container">
+      <span id="output-content"></span>
+      <button id="output-copy"></button>
+    </div>
     <script src="js/index.js"></script>
   </body>
 </html>
