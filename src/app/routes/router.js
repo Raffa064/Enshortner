@@ -6,10 +6,10 @@ function Router(db) {
     res.send("test");
   });
 
-  const HashRouter = require("./hashRouter");
+  const HashRouter = require("./hash-router");
   router.use("/hash", HashRouter(db));
 
-  const URLRouter = require("./urlRouter");
+  const URLRouter = require("./url-router");
   router.use("/url", URLRouter(db));
 
   return router;
