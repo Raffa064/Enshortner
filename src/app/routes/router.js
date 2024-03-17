@@ -1,6 +1,10 @@
+const { rootPath } = require("../../utils");
+
 function Router(db) {
   const express = require("express");
   const router = express.Router();
+
+  router.use(express.static(rootPath("public")));
 
   router.get("/test", (_, res) => {
     res.send("test");

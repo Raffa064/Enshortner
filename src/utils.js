@@ -20,7 +20,16 @@ function format_YYYYMMDD_HHMMSS(time) {
   return formattedTimestamp;
 }
 
+function rootPath(path) {
+  if (!path.startsWith("/")) {
+    path = "/" + path;
+  }
+
+  return __dirname + path;
+}
+
 module.exports = {
   randomHash,
-  format_YYYYMMDD_HHMMSS
+  format_YYYYMMDD_HHMMSS,
+  rootPath
 }
