@@ -10,7 +10,6 @@ function HashRouter(db) {
 
     db.getURLByHash(hash)
       .then((row) => {
-        console.log("ROW: ", row);
         const { url } = row;
         if (noredirect) {
           const urlResponse = URLResponse(url); 

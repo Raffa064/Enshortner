@@ -65,8 +65,6 @@ function URLRouter(db) {
       return;
     }
 
-    console.log("URL -> "+url);
-
     db.getHashByURL(url)
       .then((row) => {
         // When url exists in database
@@ -81,7 +79,7 @@ function URLRouter(db) {
         db.addURLShortener(url, hash)
           .then((_) => {
             const hashResponse = HashResponse(hash, getHashURL(req, hash));
-            res.send(200).send(hashResponse);
+            res.status(200).send(hashResponse);
           })
           .catch((err) => {
             // Probably hash collision
