@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "A link shortner",
   "main": "src/index.js",
+  "scripts": {
+    "test": "node --watch --test tests/*.test.js",
+    "dev": "nodemon index.js",
+    "migrations": "node src/index.js migrations"
+  },
+  "author": "Raffa064",
+  "license": "ISC",
   "dependencies": {
     "accepts": "^1.3.8",
     "array-flatten": "^1.1.1",
@@ -78,12 +85,5 @@
     "util-deprecate": "^1.0.2",
     "utils-merge": "^1.0.1",
     "vary": "^1.1.2"
-  },
-  "scripts": {
-    "test": "node --watch --test tests/",
-    "dev": "nodemon index.js",
-    "migrations": "node src/index.js migrations"
-  },
-  "author": "Raffa064",
-  "license": "ISC"
+  }
 }

@@ -30,7 +30,7 @@ function runMigrationsCLI() {
 }
 
 function startServer() {
-  const PORT = process.env.PORT || 8081;
+  const PORT = process.env.ENSHORTNER_PORT || 8080;
   const server = Server(PORT);
 
   const router = Router(db);
