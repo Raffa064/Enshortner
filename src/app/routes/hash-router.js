@@ -11,6 +11,7 @@ function HashRouter(db) {
     db.getURLByHash(hash)
       .then((row) => {
         const { url } = row;
+
         if (noredirect) {
           const urlResponse = URLResponse(url); 
           res.status(200).send(urlResponse);
@@ -19,8 +20,7 @@ function HashRouter(db) {
 
         res.status(200).redirect(url);
       })
-      .catch((err) => {
-        console.log("Error at /hash/:hash ", err);
+      .catch((_) => {
         const errResponse = ErrorResponse(404, "Hash not found", hash);
         res.status(404).send(errResponse);
       });

@@ -4,7 +4,7 @@
   "description": "A link shortner",
   "main": "src/index.js",
   "scripts": {
-    "test": "node --watch --test tests/*.test.js",
+    "test": "nodemon tests/*.test.js",
     "dev": "nodemon index.js",
     "migrations": "node src/index.js migrations"
   },
