@@ -32,7 +32,6 @@ function URLRouter(db) {
   }
 
   function sanitizedURL(url) {
-    console.log(url);
     url = decodeURI(url).trim(); // remove url encoding
 
     if (url.length == 0) {
