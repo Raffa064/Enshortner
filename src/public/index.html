@@ -1,22 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title></title>
+    <title>Enshortner</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/index.css" rel="stylesheet">
   </head>
   <body>
-    <input id="input-value"/>
-    <select id="mode-selector">
-      <option value="mode-hash-from-url">Hash from url</option>
-      <option value="mode-url-from-hash">Url from hash</option>
-    </select>
-    <button id="action-button">Action</button>
-    <div id="output-container">
-      <span id="output-content"></span>
-      <button id="output-copy"></button>
+    <div id="container">
+    <h1>Enshortner</h1>
+    <input id="input-value" placeholder="Enter your ..."/>
+    <div id="mode-container">
+      <ul id="mode-list">
+        <li class="selected">URL</li>
+        <li>Hash</li>
+      </ul>
     </div>
+    
+    <button id="action-button">Generate</button>
+
+    <div id="output-container">
+      <ul>
+        <li>Value: <span>https://url.com.br</span></li>
+        <li>Hash: <span>6464646464646464646464646464664646</span></li>
+        <li>URL: <span>http://lolcalhost:8080/1263378123683782112363781ashdkasasdsadjashgjddhgasjdhgajsashgdjashgsghdjasgjdjasgdjasgdjajgdajgsasgjdjashgdhadhsgdjjhahsghgsdjahsgdjahsgdjashgdjdgjashgdjashgdjaahsgddjaahsgdjaahsgdajhsgdjhdgajhdgasjhddd</span></li>
+      </ul>
+    </div>
+  
+    </div>
+    
     <script src="js/index.js"></script>
   </body>
 </html>

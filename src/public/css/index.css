@@ -1,4 +1,8 @@
 :root {
+  --color-bg-0: #222;
+  --color-accent-0: #08f;
+  --color-font-0: #eee;
+  --color-font-0-transparent: #eeea;
 }
 
 * {
@@ -7,4 +11,125 @@
   box-sizing: border-box;
   border: none;
   outline: none;
+  font-family: sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: var(--color-bg-0);
+}
+
+#container {
+  width: min(100%, 600px);
+}
+
+h1 {
+  color: var(--color-font-0);
+}
+
+#input-value {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: var(--color-bg-0);
+  border: 2px solid var(--color-accent-0);
+  border-radius: 4px 4px 4px 0px;
+  color: var(--color-font-0);
+}
+
+#mode-container {
+  display: block;
+  width: 50%;
+  position: relative;
+}
+
+#mode-container::before, 
+#mode-container::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 0px;
+  width: 10px;
+  height: 10px;
+  background: var(--color-accent-0);
+  z-index: 200;
+} 
+
+#mode-container::after {
+  width: 20px;
+  height: 20px;
+  background: var(--color-bg-0);
+  border-radius: 50%;
+}
+
+#mode-list {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 20px;
+  padding-left: 10px;
+  background: var(--color-accent-0);
+  border-radius: 0px 0px 4px 4px;
+  list-style: none;
+  position: relative;
+}
+
+#mode-list li {
+  flex: 1;
+  text-align: center;
+  color: var(--color-font-0-transparent);
+}
+
+#mode-list li.selected {
+  color: var(--color-font-0);
+}
+
+#mode-list li:not(:first-child) {
+  border-left: 1px solid var(--color-font-0-transparent);
+}
+
+#action-button {
+  display: block;
+  padding: 5px 10px;
+  margin-left: auto;
+  margin-bottom: 10px;
+  background: var(--color-accent-0);
+  color: var(--color-font-0);
+  border-radius: 4px;
+  transition: .2s;
+}
+
+#action-button:active {
+  opacity: .6;
+}
+
+#output-container {
+  padding: 10px;
+  border: 2px solid var(--color-accent-0);
+  border-radius: 4px;
+}
+
+#output-container ul {
+  list-style: none;
+  color: var(--color-accent-0);
+}
+
+#output-container li {
+  padding-block: 2px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#output-container li + li {
+  margin-top: 5px;
+}
+
+#output-container li span {
+  color: var(--color-font-0);
 }
